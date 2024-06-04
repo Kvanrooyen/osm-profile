@@ -1,0 +1,21 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 0;
+    background: #0C0910;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  

@@ -1,0 +1,26 @@
+/* src/components/css/HeatMap.css */
+
+.heat-map {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px; /* Adjust width to fit the profile card */
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.heat-map svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 640px) {
+  .heat-map {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 100%; /* Adjust to leave space on smaller screens */
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+}

@@ -1,8 +1,14 @@
+// src/App.js
+
+import React from 'react';
+import ProfileOverview from './components/ProfileOverview';
 import './App.css';
 
 function App() {
   return (
-<h1>Hello World</h1>
+    <div className="App">
+      <ProfileOverview />
+    </div>
   );
 }
 
