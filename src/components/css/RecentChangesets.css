@@ -1,39 +1,50 @@
 /* src/components/css/RecentChangesets.css */
 
- 
-  .recent-changesets h2 {
-    margin: 0 0 20px 0;
-  }
-  
-  .recent-changesets ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .changeset-item {
-    background-color: #3b3b3b;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .changeset-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .changeset-comment {
-    flex-grow: 1;
-    font-weight: bold;
-  }
-  
-  .changeset-time {
-    margin-left: 20px;
-    white-space: nowrap;
-    font-size: 0.8em; /* Smaller font size */
-    color: #a0a0a0; /* Lighter color */
-  }
+
+.recent-changesets h2 {
+  margin: 0 0 20px 0;
+}
+
+.recent-changesets ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.changeset-item {
+  background-color: #3b3b3b;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.changeset-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+}
+
+li {
+  transition: transform 0.3s;
+}
+
+li:hover {
+  transform: scale(1.05);
+}
+
+.changeset-comment {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.changeset-time {
+  margin-left: 20px;
+  white-space: nowrap;
+  font-size: 0.8em;
+  /* Smaller font size */
+  color: #a0a0a0;
+  /* Lighter color */
+}
