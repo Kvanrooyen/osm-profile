@@ -31,7 +31,7 @@ const RecentChangesets = () => {
   }, []);
 
   return (
-    <div className="recent-changesets">
+    <div className="profile-overview recent-changesets">
       <h2>Recent Changesets</h2>
       {error && <p>Error: {error}</p>}
       <ul>

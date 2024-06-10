@@ -1,15 +1,6 @@
 /* src/components/css/RecentChangesets.css */
 
-.recent-changesets {
-    background-color: #2b2b2b;
-    color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 640px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(243, 246, 247, 0.2);
-  }
-  
+ 
   .recent-changesets h2 {
     margin: 0 0 20px 0;
   }
@@ -46,4 +37,3 @@
     font-size: 0.8em; /* Smaller font size */
     color: #a0a0a0; /* Lighter color */
   }
-  
