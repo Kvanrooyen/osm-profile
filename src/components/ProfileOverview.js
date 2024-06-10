@@ -1,21 +1,27 @@
 // src/components/ProfileOverview.js
 
 import React, { useEffect, useState } from 'react';
-import { fetchUserDetails } from '../api/osmApi';
-import HeatMapComponent from './HeatMap';
+import { fetchUserDetails, fetchAllChangesetData } from '../api/osmApi';
 import './css/ProfileOverview.css';
 
 const ProfileOverview = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [changesetCount, setChangesetCount] = useState(null);
+  const [totalChanges, setTotalChanges] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const getUserDetails = async () => {
       try {
         const { userProfile, changesetCount } = await fetchUserDetails();
+        const changesetData = await fetchAllChangesetData();
+
+        // Calculate the total number of changes
+        const totalChanges = changesetData.reduce((sum, { changesCount }) => sum + changesCount, 0);
+
         setUserProfile(userProfile);
         setChangesetCount(changesetCount);
+        setTotalChanges(totalChanges);
       } catch (error) {
         setError(error.message);
       }
@@ -27,18 +33,22 @@ const ProfileOverview = () => {
   return (
     <div className="profile-overview">
       {userProfile && (
-        <div className="profile-header">
-          <div className="profile-avatar">
-            <img src={userProfile.img.href} alt="Profile Avatar" />
+        <>
+          <div className="profile-header">
+            <div className="profile-avatar">
+              <img src={userProfile.img.href} alt="Profile Avatar" />
+            </div>
+            <div className="profile-info">
+              <h1>{userProfile.display_name}</h1>
+              <div className="profile-info-highlights">
+                <p>{changesetCount} Changesets</p>
+                <p>{totalChanges} Changes</p>
+              </div>
+            </div>
           </div>
-          <div className="profile-info">
-            <h1>{userProfile.display_name}</h1>
-            <p>Map Edits: {changesetCount}</p>
-          </div>
-        </div>
+        </>
       )}
       {error && <p>Error: {error}</p>}
-      <HeatMapComponent />
     </div>
   );
 };
