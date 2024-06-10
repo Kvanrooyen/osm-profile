@@ -13,8 +13,8 @@ const ProfileOverview = () => {
   useEffect(() => {
     const getUserDetails = async () => {
       try {
-        const { userProfile, changesetCount } = await fetchUserDetails();
-        const changesetData = await fetchAllChangesetData();
+        const [userDetails, changesetData] = await Promise.all([fetchUserDetails(), fetchAllChangesetData()]);
+        const { userProfile, changesetCount } = userDetails;
 
         // Calculate the total number of changes
         const totalChanges = changesetData.reduce((sum, { changesCount }) => sum + changesCount, 0);
@@ -23,6 +23,7 @@ const ProfileOverview = () => {
         setChangesetCount(changesetCount);
         setTotalChanges(totalChanges);
       } catch (error) {
+        console.error('Error fetching user details or changeset data:', error); // Add logging
         setError(error.message);
       }
     };
@@ -39,11 +40,11 @@ const ProfileOverview = () => {
               <img src={userProfile.img.href} alt="Profile Avatar" />
             </div>
             <div className="profile-info">
-              <a              
-              className="profile-link"
-              href={`https://www.osm.org/user/GovernorKeagan`}
-              target="_blank"
-              rel="noopener noreferrer">
+              <a
+                className="profile-link"
+                href={`https://www.osm.org/user/GovernorKeagan`}
+                target="_blank"
+                rel="noopener noreferrer">
                 <h1>{userProfile.display_name}</h1>
               </a>
               <div className="profile-info-highlights">
