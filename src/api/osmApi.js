@@ -17,6 +17,8 @@ export const fetchUserProfile = async () => {
 export const fetchChangesetData = async (endTime) => {
   let url = `https://api.openstreetmap.org/api/0.6/changesets?user=${USER_ID}&time=${START_TIME},${endTime}`;
 
+  console.log(`Fetching changesets with URL: ${url}`); // Add logging
+
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -30,9 +32,12 @@ export const fetchChangesetData = async (endTime) => {
   const changesets = xmlDoc.getElementsByTagName('changeset');
 
   const changesetData = Array.from(changesets).map(changeset => {
+    const changesetId = changeset.getAttribute('id');
     const changesCount = parseInt(changeset.getAttribute('changes_count'), 10);
     const createdAt = changeset.getAttribute('created_at');
-    return { changesCount, createdAt };
+    const commentTag = Array.from(changeset.getElementsByTagName('tag')).find(tag => tag.getAttribute('k') === 'comment');
+    const comment = commentTag ? commentTag.getAttribute('v') : 'No comment';
+    return { changesetId, changesCount, createdAt, comment };
   });
 
   return changesetData;
