@@ -10,6 +10,11 @@
   box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .profile-header {
   display: flex;
   align-items: center;

@@ -39,7 +39,13 @@ const ProfileOverview = () => {
               <img src={userProfile.img.href} alt="Profile Avatar" />
             </div>
             <div className="profile-info">
-              <h1>{userProfile.display_name}</h1>
+              <a              
+              className="profile-link"
+              href={`https://www.osm.org/user/GovernorKeagan`}
+              target="_blank"
+              rel="noopener noreferrer">
+                <h1>{userProfile.display_name}</h1>
+              </a>
               <div className="profile-info-highlights">
                 <p>{changesetCount} Changesets</p>
                 <p>{totalChanges} Changes</p>
