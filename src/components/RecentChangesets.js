@@ -15,10 +15,10 @@ const RecentChangesets = () => {
         const endTime = new Date().toISOString(); // Current time
         const changesetData = await fetchChangesetData(endTime);
 
-        // Sort changesets by createdAt date and take the 10 most recent ones
+        // Sort changesets by createdAt date and take the 5 most recent ones
         const sortedChangesets = changesetData
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-          .slice(0, 10);
+          .slice(0, 5);
 
         setRecentChangesets(sortedChangesets);
       } catch (error) {
