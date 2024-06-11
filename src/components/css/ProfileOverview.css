@@ -1,3 +1,5 @@
+/* src/components/css/ProfileOverview.css */
+
 .profile-overview {
   background-color: #2b2b2b;
   color: #ffffff;
@@ -62,34 +64,33 @@
   align-items: center;
 }
 
-.placeholder-avatar,
-.placeholder-info div {
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  margin: 10px;
-}
-
 .placeholder-avatar {
   width: 60px;
   height: 60px;
+  background-color: #5c5c5c;
   border-radius: 50%;
+  margin-right: 20px;
 }
 
 .placeholder-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .placeholder-name {
-  width: 200px;
-  height: 20px;
-  margin-bottom: 10px;
-}
-
-.placeholder-changesets,
-.placeholder-total-changes {
   width: 150px;
   height: 20px;
-  margin-bottom: 5px;
+  background-color: #5c5c5c;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.placeholder-changesets {
+  width: 100px;
+  height: 20px;
+  background-color: #5c5c5c;
+  border-radius: 4px;
 }
 
 /* Media Queries for Mobile */
