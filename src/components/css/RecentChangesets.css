@@ -1,6 +1,5 @@
 /* src/components/css/RecentChangesets.css */
 
-
 .recent-changesets h2 {
   margin: 0 0 20px 0;
 }
@@ -24,7 +23,6 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
-
 }
 
 li {
@@ -47,4 +45,32 @@ li:hover {
   /* Smaller font size */
   color: #a0a0a0;
   /* Lighter color */
+}
+
+.changeset-placeholder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #3b3b3b;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.placeholder-comment,
+.placeholder-time {
+  background-color: #5c5c5c;
+  border-radius: 4px;
+}
+
+.placeholder-comment {
+  width: 70%;
+  height: 20px;
+}
+
+.placeholder-time {
+  width: 20%;
+  height: 20px;
+  margin-left: 20px;
 }
