@@ -4,10 +4,12 @@
   border-radius: 8px;
   padding: 20px;
   width: 100vw;
-  max-width: 640px; /* Maximum width on larger screens */
+  max-width: 640px;
+  /* Maximum width on larger screens */
   margin: 20px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(243, 246, 247, 0.2);
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  box-sizing: border-box;
+  /* Ensure padding is included in the width */
 }
 
 .profile-link {
@@ -53,6 +55,41 @@
 .profile-info-highlights p {
   font-size: 0.8em;
   margin-right: 10px;
+}
+
+.profile-placeholder {
+  display: flex;
+  align-items: center;
+}
+
+.placeholder-avatar,
+.placeholder-info div {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.placeholder-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.placeholder-info {
+  flex: 1;
+}
+
+.placeholder-name {
+  width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.placeholder-changesets,
+.placeholder-total-changes {
+  width: 150px;
+  height: 20px;
+  margin-bottom: 5px;
 }
 
 /* Media Queries for Mobile */
