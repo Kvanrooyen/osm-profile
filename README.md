@@ -34,8 +34,6 @@
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -57,8 +55,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -67,7 +63,6 @@
 I built this over a weekend with the goal of creating a simplified and modern looking alternative (for myself) to ["How Did You Contribute"](https://hdyc.neis-one.org/). Currently, this project only serves my OSM data via the API but I may change that in the future. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -82,15 +77,20 @@ Getting this setup for your self is fairly straightforward. You only need to mod
 
 ### Installation
 
-1.  Clone the repo
+1. Clone the repo
+
    ```sh
    git clone https://github.com/Kvanrooyen/osm-profile.git
    ```
-3. Install NPM packages
+
+2. Install NPM packages
+
    ```sh
    npm install
    ```
-4. Enter your `id` and `account_created` in `osmApi.js`
+
+3. Enter your `id` and `account_created` in `osmApi.js`
+
    ```js
    const USER_ID = 'ENTER YOUR ID';
    const START_TIME =  'ENTER YOUR START TIME';
@@ -127,8 +127,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
@@ -136,16 +134,12 @@ Distributed under the GNU General Public License v3.0 License. See `LICENSE` for
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
 ## Contact
 
 Mastodon: [@governorkeagan@en.osm.town](https://en.osm.town/@governorkeagan) · Matrix: `@governorkeagan:matrix.org`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
