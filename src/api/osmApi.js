@@ -22,7 +22,10 @@ export const fetchUserProfile = async () => {
 };
 
 export const fetchChangesetData = async (endTime) => {
-  let url = `https://api.openstreetmap.org/api/0.6/changesets?user=${USER_ID}&time=${START_TIME},${endTime}`;
+  const USER_ID = 10282766; // Make sure to replace with the actual user ID
+  const START_TIME = '2023-01-01T00:00:00Z'; // Replace with the actual start time
+
+  let url = `https://api.openstreetmap.org/api/0.6/changesets.json?user=${USER_ID}&time=${START_TIME},${endTime}`;
 
   console.log(`Fetching changesets with URL: ${url}`); // Add logging
 
@@ -33,22 +36,19 @@ export const fetchChangesetData = async (endTime) => {
     throw new Error('Could not fetch changesets');
   }
 
-  const text = await response.text();
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(text, 'application/xml');
-  const changesets = xmlDoc.getElementsByTagName('changeset');
+  const data = await response.json();
 
-  const changesetData = Array.from(changesets).map(changeset => {
-    const changesetId = changeset.getAttribute('id');
-    const changesCount = parseInt(changeset.getAttribute('changes_count'), 10);
-    const createdAt = changeset.getAttribute('created_at');
-    const commentTag = Array.from(changeset.getElementsByTagName('tag')).find(tag => tag.getAttribute('k') === 'comment');
-    const comment = commentTag ? commentTag.getAttribute('v') : 'No comment';
+  const changesetData = data.changesets.map(changeset => {
+    const changesetId = changeset.id;
+    const changesCount = changeset.changes_count;
+    const createdAt = changeset.created_at;
+    const comment = changeset.tags.comment || 'No comment';
     return { changesetId, changesCount, createdAt, comment };
   });
 
   return changesetData;
 };
+
 
 export const fetchAllChangesetData = async () => {
 
