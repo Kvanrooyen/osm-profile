@@ -13,6 +13,7 @@ export const fetchUserProfile = async () => {
   const response = await fetch(`https://api.openstreetmap.org/api/0.6/user/${USER_ID}.json`);
 
   if (!response.ok) {
+    console.error(`Failed to fetch user profile: ${response.status} ${response.statusText}`); // Add logging
     throw new Error('Could not fetch user profile');
   }
 
@@ -22,12 +23,7 @@ export const fetchUserProfile = async () => {
 };
 
 export const fetchChangesetData = async (endTime) => {
-  const USER_ID = 10282766; // Make sure to replace with the actual user ID
-  const START_TIME = '2023-01-01T00:00:00Z'; // Replace with the actual start time
-
   let url = `https://api.openstreetmap.org/api/0.6/changesets.json?user=${USER_ID}&time=${START_TIME},${endTime}`;
-
-  console.log(`Fetching changesets with URL: ${url}`); // Add logging
 
   const response = await fetch(url);
 
