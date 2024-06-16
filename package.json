@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@uiw/react-heat-map": "^2.2.2",
     "date-fns": "^3.6.0",
+    "@fortawesome/react-fontawesome": "^0.x.x",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
