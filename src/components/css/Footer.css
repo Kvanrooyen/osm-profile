@@ -1,0 +1,62 @@
+/* src/components/css/Footer.css */
+
+.footer {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100vw;
+    max-width: 640px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-commit {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.footer-commit .version-link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-commit .version-link strong {
+    color: #ffffff;
+}
+
+.footer-commit .commit-link {
+    text-decoration: none;
+}
+
+.footer-commit .commit-link code {
+    background-color: #444;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .footer {
+        width: 100vw;
+        max-width: 95%;
+        padding: 10px;
+    }
+}
